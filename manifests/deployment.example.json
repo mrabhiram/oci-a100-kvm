@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "host": {
+    "interface": "CHANGE_ME",
+    "nic_index": 0,
+    "primary_cidr": "10.20.0.10/24",
+    "mtu": 1500,
+    "reserve_memory_gib": 256
+  },
+  "paths": {
+    "base_dir": "/var/lib/oci-a100-kvm/build",
+    "state_dir": "/var/lib/oci-a100-kvm/state",
+    "image": "/var/lib/libvirt/images/base/ubuntu-24.04-20260911/ubuntu-24.04-server-cloudimg-amd64.img",
+    "image_sha256": "612b2c0cc1bc413a6cb8c38fd611794caf0f2b436c50013d8b3794db12ad7354",
+    "fm_client": "/usr/local/libexec/oci-a100-kvm/fmpm",
+    "fm_config": "/usr/share/nvidia/nvswitch/fabricmanager.cfg",
+    "image_root": "/var/lib/libvirt/images/oci-a100-kvm"
+  },
+  "management": {
+    "name": "a100-mgmt",
+    "bridge": "virbr100",
+    "host_cidr": "192.168.250.1/24"
+  },
+  "ssh_public_key": "/etc/oci-a100-kvm/authorized_key.pub",
+  "switches": [
+    "REPLACE_SWITCH_BDF_1",
+    "REPLACE_SWITCH_BDF_2",
+    "REPLACE_SWITCH_BDF_3",
+    "REPLACE_SWITCH_BDF_4",
+    "REPLACE_SWITCH_BDF_5",
+    "REPLACE_SWITCH_BDF_6"
+  ],
+  "guests": [
+    {
+      "name": "a100-vm01",
+      "memory_mib": 786432,
+      "disk_gib": 200,
+      "cpu_pins": [
+        0,
+        64,
+        1,
+        65,
+        2,
+        66,
+        3,
+        67,
+        4,
+        68,
+        5,
+        69,
+        6,
+        70,
+        7,
+        71,
+        8,
+        72,
+        9,
+        73,
+        10,
+        74,
+        11,
+        75,
+        12,
+        76,
+        13,
+        77,
+        14,
+        78,
+        15,
+        79,
+        16,
+        80,
+        17,
+        81,
+        18,
+        82,
+        19,
+        83,
+        20,
+        84,
+        21,
+        85,
+        22,
+        86,
+        23,
+        87,
+        24,
+        88,
+        25,
+        89,
+        26,
+        90,
+        27,
+        91
+      ],
+      "emulator_cpus": [
+        28,
+        92
+      ],
+      "numa_nodes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "partition_id": null,
+      "gpus": [
+        {
+          "bdf": "REPLACE_GPU_BDF_1",
+          "uuid": "REPLACE_GPU_UUID_1"
+        },
+        {
+          "bdf": "REPLACE_GPU_BDF_2",
+          "uuid": "REPLACE_GPU_UUID_2"
+        },
+        {
+          "bdf": "REPLACE_GPU_BDF_3",
+          "uuid": "REPLACE_GPU_UUID_3"
+        },
+        {
+          "bdf": "REPLACE_GPU_BDF_4",
+          "uuid": "REPLACE_GPU_UUID_4"
+        }
+      ],
+      "management": {
+        "ip": "192.168.250.11",
+        "mac": "52:54:00:25:00:01"
+      },
+      "vnic": {
+        "id": "REPLACE_VNIC_OCID",
+        "ip": "10.20.0.11",
+        "prefix": 24,
+        "gateway": "10.20.0.1",
+        "mac": "REPLACE_VNIC_MAC",
+        "vlan_tag": "REPLACE_VLAN_TAG",
+        "nic_index": 0
+      }
+    },
+    {
+      "name": "a100-vm02",
+      "memory_mib": 786432,
+      "disk_gib": 200,
+      "cpu_pins": [
+        32,
+        96,
+        33,
+        97,
+        34,
+        98,
+        35,
+        99,
+        36,
+        100,
+        37,
+        101,
+        38,
+        102,
+        39,
+        103,
+        40,
+        104,
+        41,
+        105,
+        42,
+        106,
+        43,
+        107,
+        44,
+        108,
+        45,
+        109,
+        46,
+        110,
+        47,
+        111,
+        48,
+        112,
+        49,
+        113,
+        50,
+        114,
+        51,
+        115,
+        52,
+        116,
+        53,
+        117,
+        54,
+        118,
+        55,
+        119,
+        56,
+        120,
+        57,
+        121,
+        58,
+        122,
+        59,
+        123
+      ],
+      "emulator_cpus": [
+        60,
+        124
+      ],
+      "numa_nodes": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "partition_id": null,
+      "gpus": [
+        {
+          "bdf": "REPLACE_GPU_BDF_5",
+          "uuid": "REPLACE_GPU_UUID_5"
+        },
+        {
+          "bdf": "REPLACE_GPU_BDF_6",
+          "uuid": "REPLACE_GPU_UUID_6"
+        },
+        {
+          "bdf": "REPLACE_GPU_BDF_7",
+          "uuid": "REPLACE_GPU_UUID_7"
+        },
+        {
+          "bdf": "REPLACE_GPU_BDF_8",
+          "uuid": "REPLACE_GPU_UUID_8"
+        }
+      ],
+      "management": {
+        "ip": "192.168.250.12",
+        "mac": "52:54:00:25:00:02"
+      },
+      "vnic": {
+        "id": "REPLACE_VNIC_OCID",
+        "ip": "10.20.0.12",
+        "prefix": 24,
+        "gateway": "10.20.0.1",
+        "mac": "REPLACE_VNIC_MAC",
+        "vlan_tag": "REPLACE_VLAN_TAG",
+        "nic_index": 0
+      }
+    }
+  ]
+}

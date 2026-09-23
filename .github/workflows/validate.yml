@@ -1,0 +1,28 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  offline:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Python syntax
+        run: python -m compileall -q files test
+      - name: Shell syntax
+        run: find files test -name '*.sh' -print0 | xargs -0 -r -n1 bash -n
+      - name: Offline tests
+        run: python -m unittest discover -s test/offline -v
+      - name: Documentation links
+        run: python test/check-repository.py

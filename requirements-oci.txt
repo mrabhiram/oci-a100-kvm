@@ -1,0 +1,2 @@
+# Optional: only the workstation VNIC attachment helper needs the OCI SDK.
+oci==2.175.0
