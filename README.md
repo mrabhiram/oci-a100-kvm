@@ -15,7 +15,7 @@ Create two Ubuntu 24.04 KVM virtual machines on an existing OCI `BM.GPU4.8` inst
 
 The host also runs Ubuntu 24.04. This configuration uses the NVIDIA Data Center Driver and whole GPUs; it does not use vGPU Manager or MIG.
 
-> NVLink is disabled. Validated multi-GPU communication uses CPU-memory staging; direct GPU peer access is unavailable. This is a tested proof of concept, not an Oracle or NVIDIA certified solution.
+> NVLink is disabled. Validated multi-GPU communication uses CPU-memory staging; direct GPU peer access is unavailable in A100 GPU.
 
 The original installation passed GPU and reboot tests. The extracted scripts have offline tests; a fresh installation still needs hardware validation. See [test scope](docs/validation.md).
 
